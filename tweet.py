@@ -28,7 +28,8 @@ total_bar = 20
 num_done = int(ratio / 5)
 tweet = "▓" * num_done
 tweet += "░" * (total_bar - num_done)
-tweet += f" {round(ratio, 1)}%"
+tweet += f" {round(ratio, 1)}% "
+tweet += f"({vaccinated_num}人)"
 
 print(tweet)
 
