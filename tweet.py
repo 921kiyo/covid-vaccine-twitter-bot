@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import tweepy
 from read_output import extract_total_num
 
@@ -14,7 +15,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 vaccinated_num = extract_total_num()
-print("vaccinated_num ", vaccinated_num)
+# print("vaccinated_num ", vaccinated_num)
 
 # source: https://www.stat.go.jp/data/jinsui/new.html
 # 15-64: 74492000
@@ -28,6 +29,8 @@ num_done = int(ratio / 5)
 tweet = "▓" * num_done
 tweet += "░" * (total_bar - num_done)
 tweet += f" {round(ratio, 1)}%"
+
+print(tweet)
 
 # Create a tweet
 # api.update_status(tweet)

@@ -1,3 +1,5 @@
 #!/bin/sh -l
 
-sh -c "echo Hello world my name "
+python scrape.py > output.txt
+
+python tweet.py
