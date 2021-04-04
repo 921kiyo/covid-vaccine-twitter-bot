@@ -1,4 +1,4 @@
-name: A workflow for my Hello World file
+name: Fetch vaccination stats
 on:
   schedule:
     - cron: "0 * * * *"
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Hello world action
+    name: Fetch vaccination stats
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
