@@ -26,12 +26,14 @@ total_population = 110683000
 ratio = vaccinated_num / total_population * 100
 total_bar = 20
 num_done = int(ratio / 5)
+print("ratio ", ratio)
+print("num_done ", num_done)
 tweet = "▓" * num_done
 tweet += "░" * (total_bar - num_done)
 tweet += f" {round(ratio, 1)}% "
 tweet += f"({vaccinated_num}名)"
 
-# print(tweet)
+print(tweet)
 
 # Create a tweet
-api.update_status(tweet)
+# api.update_status(tweet)
