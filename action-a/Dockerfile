@@ -3,12 +3,12 @@ FROM python:3.7-stretch
 
 RUN pip3 install -U pip setuptools wheel
 
-RUN ls -a
 # COPY requirements.txt /requirements.txt
 # RUN pip3 install -r requirements.txt
 
 # copy all source code
-# COPY . .
-ADD entrypoint.sh /entrypoint.sh
+COPY . /.
+RUN ls -a
+# ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
