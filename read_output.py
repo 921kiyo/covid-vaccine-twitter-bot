@@ -6,7 +6,7 @@ def _get_total_number():
     with open("output.txt", encoding="utf8") as f:
         for line in f:
             if found == 2:
-                return line.strip()
+                return str(line.strip())
             if found == 1:
                 found += 1
             if "<td> 合計</td>" in line.strip():
