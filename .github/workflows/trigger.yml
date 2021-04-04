@@ -1,7 +1,6 @@
 name: Fetch vaccination stats
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
     # - "cron: 0 8 * * *"
@@ -13,3 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./
+      - with: { ref: master }
