@@ -1,8 +1,9 @@
 name: Fetch vaccination stats
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/5 * * * *"
     # - "cron: 0 8 * * *"
 
 jobs:
