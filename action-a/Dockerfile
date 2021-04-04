@@ -8,6 +8,7 @@ RUN pip3 install -U pip setuptools wheel
 
 # copy all source code
 RUN mkdir -p /usr/src/app
+RUN ls -a
 COPY ./src /usr/src/app
 RUN ls /usr/src/app
 # ADD entrypoint.sh /entrypoint.sh
