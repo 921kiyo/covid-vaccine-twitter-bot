@@ -1,8 +1,6 @@
 import requests
 import bs4
 import urllib.request
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 
 url = "https://coronavirus.data.gov.uk/details/vaccinations"
 
