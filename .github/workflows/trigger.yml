@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./
-      - with: { ref: master }
+        with: { ref: master }
