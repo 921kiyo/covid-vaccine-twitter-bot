@@ -33,7 +33,6 @@ tweet += "░" * (total_bar - num_done)
 tweet += f" {round(ratio, 1)}% "
 tweet += f"({vaccinated_num}名)"
 
-print(tweet)
 
 # Create a tweet
-# api.update_status(tweet)
+api.update_status(tweet)
