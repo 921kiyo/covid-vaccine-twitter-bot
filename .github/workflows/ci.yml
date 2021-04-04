@@ -1,8 +1,8 @@
 name: A workflow for my Hello World file
 on:
   schedule:
-    # - cron: "2 * * * *"
-    - cron: "0 9 * * *"
+    - cron: "0 * * * *"
+    # - cron: "0 9 * * *"
 
 jobs:
   build:
