@@ -31,7 +31,7 @@ print("num_done ", num_done)
 tweet = "▓" * num_done
 tweet += "░" * (total_bar - num_done)
 tweet += f" {round(ratio, 1)}% "
-tweet += f"({vaccinated_num}名)"
+tweet += f"(1回目接種回数 {vaccinated_num}名)"
 
 
 # Create a tweet
