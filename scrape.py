@@ -2,10 +2,7 @@ import requests
 import bs4
 import urllib.request
 
-url = "https://coronavirus.data.gov.uk/details/vaccinations"
-
-url = "https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/United%20Kingdom.csv"
-url = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_sesshujisseki.html"
+url = "https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Japan.csv"
 
 
 def get_page_contents(url):
