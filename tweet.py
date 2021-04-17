@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import tweepy
-from read_output import extract_total_num
+from scrape import extract_total_num
 
 access_token = "1378443057620729859-q0hwpZdfDtdCwQP3PSaGNKEuyIhab0"
 access_token_secret = "trrEROXZUaBkwkc8VfxPR4OnYGtRsqL8u9Y82iNgsUOS6"
@@ -15,6 +15,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 vaccinated_num = extract_total_num()
+
 # print("vaccinated_num ", vaccinated_num)
 
 # source: https://www.stat.go.jp/data/jinsui/new.html
@@ -33,6 +34,6 @@ tweet += "░" * (total_bar - num_done)
 tweet += f" {round(ratio, 1)}% "
 tweet += f"(1回目接種回数 {vaccinated_num}名) #新型コロナワクチン"
 
-
+# print(tweet)
 # Create a tweet
 api.update_status(tweet)
