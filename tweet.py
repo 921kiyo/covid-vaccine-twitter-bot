@@ -14,7 +14,12 @@ auth.set_access_token(access_token, access_token_secret)
 # Create API object
 api = tweepy.API(auth)
 
-vaccinated_num = extract_total_num()
+(
+    people_vaccinated,
+    people_vaccinated_trend,
+    people_fully_vaccinated,
+    people_fully_vaccinated_trend,
+) = extract_total_num()
 
 # print("vaccinated_num ", vaccinated_num)
 
@@ -22,18 +27,28 @@ vaccinated_num = extract_total_num()
 # 15-64: 74492000
 # over 65: 36191000
 # total: 110683000
-total_population = 110683000
 
-ratio = vaccinated_num / total_population * 100
-total_bar = 20
-num_done = int(ratio / 5)
-print("ratio ", ratio)
-print("num_done ", num_done)
-tweet = "▓" * num_done
-tweet += "░" * (total_bar - num_done)
+
+def get_bar(num_vaccinated):
+    total_population = 110683000
+
+    ratio = num_vaccinated / total_population * 100
+    total_bar = 20
+    num_done = int(ratio / 5)
+    return "▓" * num_done + "░" * (total_bar - num_done), ratio
+
+
+bar, ratio = get_bar(people_vaccinated)
+
+tweet = bar
 tweet += f" {round(ratio, 1)}% "
-tweet += f"(1回目接種回数 {vaccinated_num}名) #新型コロナワクチン"
+tweet += f"(1回目接種回数 {people_vaccinated}名, +{people_vaccinated_trend})\n"
 
-# print(tweet)
+bar_full, ratio_full = get_bar(people_fully_vaccinated)
+tweet += bar_full
+tweet += f" {round(ratio_full, 1)}% "
+tweet += f"(2回目接種回数 {people_fully_vaccinated}名, +{people_fully_vaccinated_trend})\n"
+tweet += "#新型コロナワクチン"
+print(tweet)
 # Create a tweet
 api.update_status(tweet)

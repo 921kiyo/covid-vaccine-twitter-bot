@@ -14,5 +14,15 @@ def extract_total_num():
     table = soup.find("table")
 
     last_row = table("tr")[-1]
-    target_num = last_row("td")[-2].text
-    return int(target_num)
+    people_vaccinated = last_row("td")[-2].text
+    people_fully_vaccinated = last_row("td")[-1].text
+
+    second_last_row = table("tr")[-2]
+    people_vaccinated_previous = second_last_row("td")[-2].text
+    people_fully_vaccinated_previous = second_last_row("td")[-1].text
+    return (
+        int(people_vaccinated),
+        int(people_vaccinated) - int(people_vaccinated_previous),
+        int(people_fully_vaccinated),
+        int(people_fully_vaccinated) - int(people_fully_vaccinated_previous),
+    )
