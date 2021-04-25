@@ -42,13 +42,13 @@ bar, ratio = get_bar(people_vaccinated)
 
 tweet = bar
 tweet += f" {round(ratio, 1)}% "
-tweet += f"(1回目接種回数 {people_vaccinated}名, +{people_vaccinated_trend})\n"
+tweet += f"(1回目接種回数, vaccinated {people_vaccinated}名, +{people_vaccinated_trend})\n"
 
 bar_full, ratio_full = get_bar(people_fully_vaccinated)
 tweet += bar_full
 tweet += f" {round(ratio_full, 1)}% "
-tweet += f"(2回目接種回数 {people_fully_vaccinated}名, +{people_fully_vaccinated_trend})\n"
-tweet += "#新型コロナワクチン"
+tweet += f"(2回目接種回数, fully vaccinated {people_fully_vaccinated}名, +{people_fully_vaccinated_trend})\n"
+tweet += "#新型コロナワクチン #CovidVaccines #covidjapan"
 print(tweet)
 # Create a tweet
 api.update_status(tweet)
