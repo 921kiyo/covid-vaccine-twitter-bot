@@ -19,6 +19,7 @@ api = tweepy.API(auth)
     people_vaccinated_trend,
     people_fully_vaccinated,
     people_fully_vaccinated_trend,
+    collect_date,
 ) = extract_total_num()
 
 # print("vaccinated_num ", vaccinated_num)
@@ -48,6 +49,7 @@ bar_full, ratio_full = get_bar(people_fully_vaccinated)
 tweet += bar_full
 tweet += f" {round(ratio_full, 1)}% "
 tweet += f"(2回目接種回数, fully vaccinated {people_fully_vaccinated}名, +{people_fully_vaccinated_trend})\n"
+tweet += f"{collect_date} "
 tweet += "#新型コロナワクチン #CovidVaccines #covidjapan"
 print(tweet)
 # Create a tweet
