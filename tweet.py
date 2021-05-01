@@ -22,13 +22,14 @@ api = tweepy.API(auth)
     collect_date,
 ) = extract_total_num()
 
-# source: https://www.stat.go.jp/data/jinsui/new.html
-# 15-64: 74492000
-# over 65: 36191000
-# total: 110683000
-
 
 def get_progress_bar(num_vaccinated):
+    """
+    Source: https://www.stat.go.jp/data/jinsui/new.html
+    - 15-64: 74492000
+    - over 65: 36191000
+    - total: 110683000
+    """
     total_population = 110683000
     ratio = num_vaccinated / total_population * 100
     total_bar = 20
