@@ -51,4 +51,4 @@ tweet += "#新型コロナワクチン #CovidVaccines #covidjapan "
 tweet += f"{collect_date} "
 print(tweet)
 # Create a tweet
-# api.update_status(tweet)
+api.update_status(tweet)
