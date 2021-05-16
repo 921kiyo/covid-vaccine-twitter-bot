@@ -11,11 +11,11 @@ jobs:
     # environment: CI
     name: Fetch vaccination stats
     runs-on: ubuntu-latest
-    env:
-      TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-      TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-      CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
-      CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+    # env:
+    #   TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+    #   TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+    #   CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+    #   CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
     steps:
       - uses: actions/checkout@v1
       - uses: ./
