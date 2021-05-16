@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    environment: CI
     name: Fetch vaccination stats
     runs-on: ubuntu-latest
     env:
