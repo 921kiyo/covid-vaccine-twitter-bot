@@ -38,7 +38,6 @@ def get_progress_bar(num_vaccinated):
     num_done = int(ratio / 5)
     return "▓" * num_done + "░" * (total_bar - num_done), ratio
 
-
 bar, ratio = get_progress_bar(people_vaccinated)
 
 tweet = bar
