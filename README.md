@@ -11,3 +11,5 @@ You can find the tweets in https://twitter.com/JapanVaccine
 ツイッターアカウントは https://twitter.com/JapanVaccine
 
 ![tweet example](tweet_example.png)
+
+Data source: https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Japan.csv
