@@ -16,15 +16,19 @@ def extract_total_num():
     last_row = table("tr")[-1]
     people_vaccinated = last_row("td")[-3].text
     people_fully_vaccinated = last_row("td")[-2].text
+    total_booster = last_row("td")[-1].text
     collect_date = last_row("td")[2].text
 
     second_last_row = table("tr")[-2]
     people_vaccinated_previous = second_last_row("td")[-3].text
     people_fully_vaccinated_previous = second_last_row("td")[-2].text
+    total_booster_previous = second_last_row("td")[-1].text
     return (
         int(people_vaccinated),
         int(people_vaccinated) - int(people_vaccinated_previous),
         int(people_fully_vaccinated),
         int(people_fully_vaccinated) - int(people_fully_vaccinated_previous),
+        int(total_booster),
+        int(total_booster) - int(total_booster_previous),
         collect_date,
     )

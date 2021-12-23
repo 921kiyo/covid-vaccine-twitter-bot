@@ -21,6 +21,8 @@ api = tweepy.API(auth)
     people_vaccinated_trend,
     people_fully_vaccinated,
     people_fully_vaccinated_trend,
+    total_booster,
+    total_booster_trend,
     collect_date,
 ) = extract_total_num()
 
@@ -38,6 +40,7 @@ def get_progress_bar(num_vaccinated):
     num_done = int(ratio / 5)
     return "▓" * num_done + "░" * (total_bar - num_done), ratio
 
+
 bar, ratio = get_progress_bar(people_vaccinated)
 
 tweet = bar
@@ -47,8 +50,12 @@ bar_full, ratio_full = get_progress_bar(people_fully_vaccinated)
 tweet += bar_full
 tweet += f" {round(ratio_full, 1)}% "
 tweet += f"(2回目接種回数, fully vaccinated {people_fully_vaccinated:,}名, +{people_fully_vaccinated_trend:,})\n"
+bar_booster, ratio_booster = get_progress_bar(total_booster)
+tweet += bar_booster
+tweet += f" {round(bar_booster, 1)}% "
+tweet += f"(ブースター接種回数, total booster {total_booster:,}名, +{total_booster_trend:,})\n"
 tweet += "#新型コロナワクチン #CovidVaccines #covidjapan "
 tweet += f"{collect_date} "
 print(tweet)
 # Create a tweet
-api.update_status(tweet)
+# api.update_status(tweet)
