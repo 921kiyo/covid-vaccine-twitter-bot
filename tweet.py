@@ -53,7 +53,7 @@ tweet += f"(2回目接種, fully vaccinated {people_fully_vaccinated:,}名, +{pe
 bar_booster, ratio_booster = get_progress_bar(total_booster)
 tweet += bar_booster
 tweet += f" {round(ratio_booster, 1)}% "
-tweet += f"(追加接種, total booster {total_booster:,}名, +{total_booster_trend:,})\n"
+tweet += f"(追加接種, booster {total_booster:,}名, +{total_booster_trend:,})\n"
 tweet += "#新型コロナワクチン #CovidVaccines #covidjapan "
 tweet += f"{collect_date} "
 print(tweet)
