@@ -36,8 +36,8 @@ def get_progress_bar(num_vaccinated):
     """
     total_population = 110683000
     ratio = round(num_vaccinated / total_population * 100, 1)
-    total_bar = 20
-    num_done = int(ratio / 5)
+    total_bar = 10
+    num_done = int(ratio / 10)
     return "▓" * num_done + "░" * (total_bar - num_done), ratio
 
 
