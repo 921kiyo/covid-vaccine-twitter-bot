@@ -57,6 +57,5 @@ tweet += f"(追加接種, total booster {total_booster:,}名, +{total_booster_tr
 tweet += "#新型コロナワクチン #CovidVaccines #covidjapan "
 tweet += f"{collect_date} "
 print(tweet)
-print("LENNGTH, ", len(tweet))
 # Create a tweet
-# api.update_status(tweet)
+api.update_status(tweet)
