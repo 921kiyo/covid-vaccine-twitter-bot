@@ -36,8 +36,8 @@ def get_progress_bar(num_vaccinated):
     """
     total_population = 110683000
     ratio = round(num_vaccinated / total_population * 100, 1)
-    total_bar = 20
-    num_done = int(ratio / 5)
+    total_bar = 10
+    num_done = int(ratio / 10)
     return "▓" * num_done + "░" * (total_bar - num_done), ratio
 
 
@@ -57,5 +57,6 @@ tweet += f"(追加接種回数, total booster {total_booster:,}名, +{total_boos
 tweet += "#新型コロナワクチン #CovidVaccines #covidjapan "
 tweet += f"{collect_date} "
 print(tweet)
+print("LENNGTH, ", len(tweet))
 # Create a tweet
-api.update_status(tweet)
+# api.update_status(tweet)
