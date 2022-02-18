@@ -45,15 +45,15 @@ bar, ratio = get_progress_bar(people_vaccinated)
 
 tweet = bar
 tweet += f" {round(ratio, 1)}% "
-tweet += f"(1回目接種, vaccinated {people_vaccinated:,}名, +{people_vaccinated_trend:,})\n"
+tweet += f"(1回目/vaccinated {people_vaccinated:,}名, +{people_vaccinated_trend:,})\n"
 bar_full, ratio_full = get_progress_bar(people_fully_vaccinated)
 tweet += bar_full
 tweet += f" {round(ratio_full, 1)}% "
-tweet += f"(2回目接種, fully vaccinated {people_fully_vaccinated:,}名, +{people_fully_vaccinated_trend:,})\n"
+tweet += f"(2回目/fully vaccinated {people_fully_vaccinated:,}名, +{people_fully_vaccinated_trend:,})\n"
 bar_booster, ratio_booster = get_progress_bar(total_booster)
 tweet += bar_booster
 tweet += f" {round(ratio_booster, 1)}% "
-tweet += f"(追加接種, booster {total_booster:,}名, +{total_booster_trend:,})\n"
+tweet += f"(追加/booster {total_booster:,}名, +{total_booster_trend:,})\n"
 tweet += "#新型コロナワクチン #CovidVaccines #covidjapan "
 tweet += f"{collect_date} "
 print(tweet)
