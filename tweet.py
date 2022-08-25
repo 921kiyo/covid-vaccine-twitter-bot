@@ -57,5 +57,6 @@ tweet += f"(追加/booster {total_booster:,}名, +{total_booster_trend:,})\n"
 tweet += "#新型コロナワクチン #CovidVaccines #covidjapan "
 tweet += f"{collect_date} "
 print(tweet)
+print(len(tweet))
 # Create a tweet
-api.update_status(tweet)
+# api.update_status(tweet)
